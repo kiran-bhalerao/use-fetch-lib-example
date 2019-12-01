@@ -41,7 +41,7 @@ export const Another: React.FC = () => {
 
   useEffect(() => {
     postTodo({
-      title: "hello word",
+      title: "hello world",
       body: "test",
       userId: 23
     });
@@ -53,7 +53,7 @@ export const Another: React.FC = () => {
       <div>{isMocked ? "mocked data" : "Not a mock data"}</div>
       <br />
       <div>useFetch Get call: {todo ? todo.title : "waiting..."}</div>
-      <div>{todoFulfilled ? "Loading todos..." : "There are your todos"}</div>
+      <div>{todoFulfilled ? "There are your todos" : "Loading todos..."}</div>
       <br />
       <div>{isFulfilled ? "Todo Posted ....." : "Todo Posting >>>>>>"}</div>
     </>
