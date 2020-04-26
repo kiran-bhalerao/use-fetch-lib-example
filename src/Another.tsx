@@ -5,7 +5,7 @@ const mockTodos = {
   completed: false,
   id: 1,
   title: "mock title",
-  userId: 1
+  userId: 1,
 };
 
 type IPostTodo = {
@@ -21,29 +21,44 @@ interface IPostData extends IPostTodo {
 }
 
 export const Another: React.FC = () => {
-  const [mock, { isMocked }] = useFetch({
+  const [
+    {
+      data: mock,
+      status: { isMocked },
+    },
+  ] = useFetch({
     url: "/mocked/api",
     method: "get",
     shouldDispatch: true,
-    mockData: mockTodos
+    mockData: mockTodos,
   });
 
-  const [todo, { isFulfilled: todoFulfilled }] = useFetch<IGetTodos>({
+  const [
+    {
+      data: todo,
+      status: { isFulfilled: todoFulfilled },
+    },
+  ] = useFetch<IGetTodos>({
     url: "/todos/1",
     method: "get",
-    shouldDispatch: true
+    shouldDispatch: true,
   });
 
-  const [, { isFulfilled }, postTodo] = useFetch<IPostData, IPostTodo>({
+  const [
+    {
+      status: { isFulfilled },
+    },
+    postTodo,
+  ] = useFetch<IPostData, IPostTodo>({
     url: "/posts",
-    method: "post"
+    method: "post",
   });
 
   useEffect(() => {
     postTodo({
       title: "hello world",
       body: "test",
-      userId: 23
+      userId: 23,
     });
   }, []);
 
