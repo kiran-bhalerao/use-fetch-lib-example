@@ -16,7 +16,7 @@
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
     "typescript": "3.7.2",
-    "use-fetch-lib": "file:../use-fetch-lib"
+    "use-fetch-lib": "latest"
   },
   "scripts": {
     "start": "react-app-rewired start",
