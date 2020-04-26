@@ -14,7 +14,7 @@
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
     "typescript": "3.7.2",
-    "use-fetch-lib": "^1.0.2"
+    "use-fetch-lib": "latest"
   },
   "scripts": {
     "start": "react-scripts start",
